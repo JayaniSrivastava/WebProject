@@ -1,0 +1,63 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page base */
+body {
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #f6e9fc, #fdf3ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Success card */
+.success-card {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  max-width: 420px;
+  width: 90%;
+}
+
+/* Icon */
+.success-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Heading */
+.success-card h1 {
+  color: #6a1bbd;
+  margin-bottom: 0.8rem;
+}
+
+/* Text */
+.success-card p {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(90deg, #9c4dcc, #be75d8);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(156, 77, 204, 0.4);
+}

@@ -1,0 +1,162 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* NAVBAR */
+header {
+  background: linear-gradient(135deg, #ff5a5f, #ff385c);
+  padding: 15px 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffecec;
+}
+
+/* CONTAINER */
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+/* CARD */
+.home-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.home-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.home-content {
+  padding: 18px;
+}
+
+.home-content h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* TEXT */
+.home-content p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* PRICE */
+.price {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff385c;
+}
+
+/* BUTTONS */
+.actions {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* BUTTON BASE */
+.actions a,
+.actions button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* VIEW */
+.view {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+/* EDIT */
+.edit {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* DELETE */
+.delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* FAV */
+.fav {
+  background: #ffe4e6;
+  color: #be123c;
+}
+
+/* BOOK */
+.book {
+  background: black;
+  color: white;
+}
+
+/* HOVER EFFECT */
+.actions a:hover,
+.actions button:hover {
+  transform: scale(1.05);
+}
+
+/* LINK WRAPPER */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}

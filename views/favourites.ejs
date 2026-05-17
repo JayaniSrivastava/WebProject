@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/favourites.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Airbnb Clone</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/favourites">Favourites</a>
+      <a href="/booked">Booked</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <h1 class="page-title">❤️ Your Favourite Homes</h1>
+
+  <div class="home-container">
+
+    <% if (homes.length === 0) { %>
+      <p class="empty">No favourites yet!</p>
+    <% } %>
+
+    <% homes.forEach(home => { %>
+
+      <div class="home-card">
+
+        <img 
+          src="<%= home.image %>" 
+          class="home-img"
+          onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'"
+        >
+
+        <div class="home-content">
+          <h3><%= home.houseName %></h3>
+
+          <a href="/homes/<%= home._id %>" class="view-btn">View</a>
+
+          <form action="/favourites/remove" method="POST">
+            <input type="hidden" name="homeId" value="<%= home._id %>">
+            <button type="submit" class="remove-btn">Remove</button>
+          </form>
+
+        </div>
+
+      </div>
+
+    <% }) %>
+
+  </div>
+
+</main>
+
+</body>
+</html>

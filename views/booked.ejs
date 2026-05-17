@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/booked.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>📌 Booked Houses</h2>
+
+    <% if (!homes || homes.length === 0) { %>
+      <p class="empty-text">No houses booked yet.</p>
+    <% } else { %>
+      <ul class="homes-list">
+        <% homes.forEach(home => { %>
+          <li class="home-card">
+            <h3><%= home.houseName %></h3>
+            <p>📍 <%= home.city %></p>
+            <p>🏠 House No: <%= home.houseNo %></p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <a href="/" class="back-btn">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>

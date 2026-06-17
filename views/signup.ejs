@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+</head>
+<body>
+
+  <h1>Signup</h1>
+
+  <form action="/signup" method="POST">
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Enter Email" 
+      required
+    >
+
+    <input 
+      type="password" 
+      name="password" 
+      placeholder="Enter Password" 
+      required
+    >
+
+    <button type="submit">Signup</button>
+  </form>
+
+</body>
+</html>

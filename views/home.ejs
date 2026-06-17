@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Airbnb Clone</div>
+    <div class="nav-links">
+  <a href="/">Home</a>
+  <a href="/favourites">Favourites</a>
+  <a href="/booked">Booked</a>
+
+  <% if (locals.user) { %>
+    <a href="/add-home">Add Home</a>
+
+    <form action="/logout" method="POST" style="display:inline;">
+      <button type="submit">Logout</button>
+    </form>
+  <% } else { %>
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+  <% } %>
+</div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="home-container">
+
+    <% if (registeredHomes.length === 0) { %>
+      <p>No homes found. Add one!</p>
+    <% } %>
+
+    <% registeredHomes.forEach(home => { %>
+
+      <div class="home-card">
+
+        <!-- IMAGE -->
+        <img 
+  src="<%= home.image || home.imageUrl || 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85' %>" 
+  class="home-img"
+>
+
+        <!-- CONTENT -->
+        <div class="home-content">
+          <h3><%= home.houseName %></h3>
+
+          <p>📍 <%= home.address %></p>
+          <p>🏙 <%= home.city || 'N/A' %></p>
+          <p>🏠 <%= home.houseNo %></p>
+
+          <p class="price">₹ <%= home.price %></p>
+
+          <!-- ACTIONS -->
+          <div class="actions">
+
+            <a href="/home/<%= home._id %>" class="view">View</a>
+
+            <a href="/edit-home/<%= home._id %>" class="edit">Edit</a>
+
+            <form action="/delete-home" method="POST" style="display:inline;">
+              <input type="hidden" name="homeId" value="<%= home._id %>">
+              <button type="submit" class="delete">Delete</button>
+            </form>
+
+            <form action="/favourite" method="POST" style="display:inline;">
+              <input type="hidden" name="homeId" value="<%= home._id %>">
+              <button type="submit" class="fav">❤️</button>
+            </form>
+
+            <form action="/book" method="POST" style="display:inline;">
+              <input type="hidden" name="homeId" value="<%= home._id %>">
+              <button type="submit" class="book">Book</button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    <% }) %>
+
+  </div>
+
+</main>
+
+</body>
+</html>

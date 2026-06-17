@@ -1,0 +1,103 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY (SOFT GRADIENT BACKGROUND 🌸) */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #f8fbff, #eef3ff);
+  color: #333;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* TITLE */
+h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #2c2c2c;
+}
+
+/* LIST */
+.homes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CARD */
+.home-card {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+  border: 1px solid #eef2f7;
+}
+
+/* HOVER */
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+/* TEXT */
+.home-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.home-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 3px 0;
+}
+
+/* BOOKED TAG (SUBTLE 💚) */
+.home-card h3::after {
+  content: "✔ Booked";
+  font-size: 11px;
+  margin-left: 10px;
+  background: #eafaf1;
+  color: #2e7d32;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* EMPTY TEXT */
+.empty-text {
+  text-align: center;
+  color: #888;
+  font-size: 15px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  display: block;
+  width: fit-content;
+  margin: 35px auto 0;
+  padding: 10px 22px;
+  background: #4a6cf7;
+  color: white;
+  text-decoration: none;
+  border-radius: 22px;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+/* HOVER BUTTON */
+.back-btn:hover {
+  background: #3b5bdb;
+}

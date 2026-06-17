@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/homeDetails.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Airbnb Clone</div>
+    <div class="nav-links">
+  <a href="/">Home</a>
+  <a href="/favourites">Favourites</a>
+  <a href="/booked">Booked</a>
+
+  <% if (locals.user) { %>
+    <a href="/add-home">Add Home</a>
+
+    <form action="/logout" method="POST" style="display:inline;">
+      <button type="submit">Logout</button>
+    </form>
+  <% } else { %>
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+  <% } %>
+</div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="details-card">
+
+    <!-- Image -->
+     <img 
+  src="<%= home.image %>" 
+  class="details-img"
+  onerror="this.src='https://via.placeholder.com/400x250?text=No+Image'"
+>
+
+    <!-- Info -->
+    <div class="details-content">
+      <h2><%= home.houseName %></h2>
+
+      <p><strong>📍 Address:</strong> <%= home.address %></p>
+      <p><strong>🏙 City:</strong> <%= home.city %></p>
+      <p><strong>🏠 House No:</strong> <%= home.houseNo %></p>
+
+      <p class="price">₹ <%= home.price %></p>
+
+      <!-- Actions -->
+      <div class="actions">
+
+        <form action="/favourite" method="POST">
+          <input type="hidden" name="homeId" value="<%= home._id %>">
+          <button class="btn fav">❤️ Add to Favourites</button>
+        </form>
+
+        <form action="/book" method="POST">
+          <input type="hidden" name="homeId" value="<%= home._id %>">
+          <button class="btn book">📌 Book Now</button>
+        </form>
+
+        <a href="/" class="btn back">⬅ Back</a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html> 
+
